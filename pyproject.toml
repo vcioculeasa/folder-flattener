@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "folder_flattener"
+version = "0.1.0"
+description = "Flatten folders by copying files with path-encoded names."
+requires-python = ">=3.8,<4.0"
+authors = [{ name = "YOUR NAME", email = "you@example.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+keywords = ["flatten", "filesystem", "cli", "gui"]
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "click>=8.0.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "flake8", "black", "mypy", "pre-commit"]
+
+[project.scripts]
+folder-flattener = "folder_flattener.cli:main"
+folder-flattener-gui = "folder_flattener.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["folder_flattener*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
