@@ -113,31 +113,13 @@ Directory paths are encoded into filenames using a configurable separator:
 - **Progress Tracking**: Visual progress bar during flattening
 - **Background Processing**: Non-blocking operation with threading
 
-## Development
 
-### Running Tests
+## Running Tests
 
 ```bash
 pytest
 ```
 
-### Code Formatting
-
-```bash
-black folder_flattener tests
-```
-
-### Type Checking
-
-```bash
-mypy folder_flattener
-```
-
-### Running Linting
-
-```bash
-flake8 folder_flattener tests
-```
 
 ## Requirements
 
